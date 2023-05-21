@@ -1,12 +1,6 @@
 import { useToast } from "@apideck/components";
 import { ChatCompletionRequestMessage } from "openai";
-import React, {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 import { sendMessage } from "./sendMessage";
 
@@ -18,17 +12,18 @@ interface ContextProps {
 
 const ChatsContext = createContext<Partial<ContextProps>>({});
 
-export function MessagesProvider({ children }: { children: ReactNode }) {
+export function MessagesProvider({ children, handler }) {
   const { addToast } = useToast();
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
   const [isLoadingAnswer, setIsLoadingAnswer] = useState(false);
 
+  // TODO: dev purposes
   useEffect(() => {
     const initializeChat = () => {
       const systemMessage: ChatCompletionRequestMessage = {
         role: "system",
         content:
-          "You are ChatGPT, a large language model trained by OpenAI. You are a medical diagnosis system. I will give you symptopms and an overview of how I am feeling. In response, you will give a diagnosis based on my response.",
+          "You are ChatGPT, a large language model trained by OpenAI. You are a medical diagnosis system. I will give you symptopms and an overview of how I am feeling. In response, you will give a diagnosis based on my response. MAKE SURE the response starts with the name of the diagnosis followed by a semi colon. Then after the semi-colon, explain your resoning.",
       };
       const welcomeMessage: ChatCompletionRequestMessage = {
         role: "assistant",
@@ -43,6 +38,8 @@ export function MessagesProvider({ children }: { children: ReactNode }) {
     if (!messages?.length) {
       initializeChat();
     }
+    console.log(messages);
+    handler(messages);
   }, [messages?.length, setMessages]);
 
   const addMessage = async (content: string) => {

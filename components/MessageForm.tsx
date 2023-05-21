@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMessages } from "../lib/useMessages";
 
-const MessageForm = () => {
+const MessageForm = ({ handler }) => {
   const [content, setContent] = useState("");
   const { addMessage } = useMessages();
 
@@ -9,6 +9,7 @@ const MessageForm = () => {
     e?.preventDefault();
     addMessage(content);
     setContent("");
+    handler(true);
   };
 
   return (
