@@ -137,7 +137,7 @@ export default function Result({ diagnosis }) {
               web designers and developers.
             </p>
             <a
-              href="10.13.228.67:3000"
+              href="http://10.13.228.67:3000/"
               className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
             >
               Chat now!
