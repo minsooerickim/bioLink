@@ -27,13 +27,10 @@ export default function Nav() {
           >
             <span className="sr-only">Open user menu</span>
             {status === "authenticated" ? (
-              // <div className="bg-red-500 z-1">
               <a
                 href="/history"
                 className="bg-white text-base hover:text-blue-700 rounded-none"
               >
-                {/* rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 */}
-                {/* <p className="bg-white text-base hover:text-blue-700 rounded-none"> */}
                 View History
               </a>
             ) : (
