@@ -2,7 +2,7 @@ import React from "react";
 
 const about = () => {
   return (
-    <div className="w-full gap-y-0 flex flex-col justify-center items-start text-2xl p-40">
+    <div className="w-full gap-y-0 flex flex-col justify-center items-start text-2xl p-40 pt-20">
       <h1 className="font-extrabold tracking-tight leading-none text-gray-900 text-7xl dark:text-white mb-8">
         What is bioLink?
       </h1>
