@@ -4,9 +4,12 @@ export default function Result({ diagnosis }) {
   const [diagnosisName, setDiagnosisName] = useState(
     "Analyzying your response..."
   );
+  const [possibleSymptoms, setPossibleSymptoms] = useState("");
   useEffect(() => {
     if (diagnosis.includes(";")) {
       setDiagnosisName(diagnosis.split(";")[0]);
+      setPossibleSymptoms(diagnosis.split(";")[1]);
+      console.log(possibleSymptoms);
     }
   }, [diagnosis]);
 
@@ -77,12 +80,11 @@ export default function Result({ diagnosis }) {
               Design
             </a>
             <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
-              Start with Flowbite Design System
+              {possibleSymptoms}
             </h2>
             <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
-              Static websites are now used to bootstrap lots of websites and are
-              becoming the basis for a variety of tools that even influence both
-              web designers and developers.
+              The above are some other diagnoses that could fit your symptoms.
+              Make sure to visit an actual doctor for serious cases.
             </p>
             <a
               href="#"
@@ -127,7 +129,7 @@ export default function Result({ diagnosis }) {
               Code
             </a>
             <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
-              Best react libraries around the web
+              Chat with local experts in the field!
             </h2>
             <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
               Static websites are now used to bootstrap lots of websites and are
@@ -135,10 +137,10 @@ export default function Result({ diagnosis }) {
               web designers and developers.
             </p>
             <a
-              href="#"
+              href="10.13.228.67:3000"
               className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
             >
-              Read more
+              Chat now!
               <svg
                 aria-hidden="true"
                 className="w-4 h-4 ml-2"

@@ -23,7 +23,7 @@ export function MessagesProvider({ children, handler }) {
       const systemMessage: ChatCompletionRequestMessage = {
         role: "system",
         content:
-          "You are ChatGPT, a large language model trained by OpenAI. You are a medical diagnosis system. I will give you symptopms and an overview of how I am feeling. In response, you will give a diagnosis based on my response. MAKE SURE the response starts with the name of the diagnosis followed by a semi colon. Then after the semi-colon, explain your resoning.",
+          "I will give you symptopms and an overview of how I am feeling. In response, you will give a diagnosis based on my response. MAKE SURE the response starts with the name of the diagnosis followed by a semi colon. Then follow it with 5 other comma separated possible symptoms followed by a semi colon. Then after the semi-colon, explain your resoning.",
       };
       const welcomeMessage: ChatCompletionRequestMessage = {
         role: "assistant",
