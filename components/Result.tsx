@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-import { RxArrowLeft } from 'react-icons/rx'
+import { RxArrowLeft } from "react-icons/rx";
 export default function Result({ diagnosis }) {
   const [diagnosisName, setDiagnosisName] = useState(
-    'Analyzing your response...'
-  )
-  const [possibleSymptoms, setPossibleSymptoms] = useState('')
+    "Analyzing your response..."
+  );
+  const [possibleSymptoms, setPossibleSymptoms] = useState("");
   useEffect(() => {
-    if (diagnosis.includes(';')) {
-      setDiagnosisName(diagnosis.split(';')[0])
-      setPossibleSymptoms(diagnosis.split(';')[1])
-      console.log('possible', possibleSymptoms)
+    if (diagnosis.includes(";")) {
+      setDiagnosisName(diagnosis.split(";")[0]);
+      setPossibleSymptoms(diagnosis.split(";")[1]);
+      console.log("possible", possibleSymptoms);
     }
-  }, [diagnosis])
+  }, [diagnosis]);
   useEffect(() => {
-    if (diagnosisName != 'Analyzying your response...') {
-      axios.post('/api/addDiagnosis', { diagnosisName })
+    if (diagnosisName != "Analyzying your response...") {
+      axios.post("/api/addDiagnosis", { diagnosisName });
     }
-  }, [diagnosisName])
+  }, [diagnosisName]);
 
   // console.log(diagnosisN)
   return (
@@ -113,7 +113,9 @@ export default function Result({ diagnosis }) {
                 Connect and Engage with knowledgeable Doctors near your area!
               </p>
               <a
-                href="http://10.13.228.67:3000/"
+                // ucr-secure
+                // href="http://10.13.228.67:3000/"
+                href="http://localhost:3000/"
                 className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
               >
                 Chat now!
@@ -138,5 +140,5 @@ export default function Result({ diagnosis }) {
         )}
       </div>
     </section>
-  )
+  );
 }
