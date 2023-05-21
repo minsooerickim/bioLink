@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apideck/components": "^0.12.8",
+    "@next-auth/mongodb-adapter": "0.0.2-next.285",
     "@types/node": "20.2.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -18,6 +19,8 @@
     "eslint-config-next": "13.4.3",
     "flowbite": "^1.6.5",
     "next": "13.4.3",
+    "next-auth": "^4.20.1",
+    "mongodb": "^4.8.0",
     "openai": "^3.2.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
