@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import { signIn } from "next-auth/react";
 export default function Nav() {
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -26,6 +28,7 @@ export default function Nav() {
               className="w-8 h-8 rounded-full"
               src="/pfp.jpg"
               alt="user photo"
+              onClick={() => signIn()}
             />
           </button>
           <div

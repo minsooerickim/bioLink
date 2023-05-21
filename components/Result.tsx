@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Result({ diagnosis }) {
   const [diagnosisName, setDiagnosisName] = useState(
@@ -12,6 +13,11 @@ export default function Result({ diagnosis }) {
       console.log(possibleSymptoms);
     }
   }, [diagnosis]);
+  useEffect(() => {
+    if (diagnosisName != "Analyzying your response...") {
+      axios.post("/api/addDiagnosis", { diagnosisName });
+    }
+  }, [diagnosisName]);
 
   return (
     <section className="bg-white dark:bg-gray-900">
