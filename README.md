@@ -1,4 +1,4 @@
-# bioLink
+# bioLink | 🥇 1st Place Overall @ BioHack!
 
 ### Personalized Medical Diagnoses in Seconds!
 
